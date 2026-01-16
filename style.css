@@ -1,0 +1,498 @@
+/* ------------------------------
+   Basic Reset
+---------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0b1020;
+  --card: rgba(255, 255, 255, 0.08);
+  --card2: rgba(255, 255, 255, 0.12);
+  --border: rgba(255, 255, 255, 0.15);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.70);
+  --accent: #7c5cff;
+  --accent2: #00d4ff;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 92, 255, 0.35), transparent 55%),
+              radial-gradient(circle at 80% 10%, rgba(0, 212, 255, 0.25), transparent 50%),
+              radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.08), transparent 55%),
+              var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 70px 0;
+}
+
+.section.alt {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.6rem, 2.3vw, 2.3rem);
+  letter-spacing: 0.2px;
+}
+
+.section-title p {
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ------------------------------
+   Header
+---------------------------------*/
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(14px);
+  background: rgba(10, 14, 28, 0.55);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  font-weight: 800;
+  color: #081026;
+}
+
+.brand-text h1 {
+  font-size: 1.05rem;
+  line-height: 1.1;
+}
+
+.brand-text p {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav a {
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+
+.nav a:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+/* ------------------------------
+   Hero
+---------------------------------*/
+.hero {
+  padding: 70px 0 40px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.tag {
+  display: inline-block;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 14px;
+}
+
+.hero-left h2 {
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  line-height: 1.12;
+}
+
+.highlight {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtext {
+  margin-top: 14px;
+  color: var(--muted);
+  max-width: 54ch;
+}
+
+.cta-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #07101f;
+  border: none;
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.10);
+}
+
+.btn.full {
+  width: 100%;
+}
+
+.hero-stats {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px;
+}
+
+.stat h3 {
+  font-size: 1.2rem;
+}
+
+.stat p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.note {
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ------------------------------
+   Glass Card
+---------------------------------*/
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+  backdrop-filter: blur(16px);
+}
+
+.glass-card h3 {
+  font-size: 1.2rem;
+}
+
+.glass-card p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ------------------------------
+   Form Styles
+---------------------------------*/
+.form {
+  margin-top: 14px;
+  display: grid;
+  gap: 12px;
+}
+
+.form label {
+  display: grid;
+  gap: 6px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: rgba(0, 0, 0, 0.22);
+  color: var(--text);
+  outline: none;
+}
+
+.form input:focus,
+.form select:focus,
+.form textarea:focus {
+  border-color: rgba(124, 92, 255, 0.7);
+}
+
+.checkbox {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+.small {
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.85rem;
+}
+
+/* ------------------------------
+   Cards
+---------------------------------*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+  min-height: 150px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Levels
+---------------------------------*/
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.level {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.level.pro {
+  grid-column: span 3;
+  background: rgba(124, 92, 255, 0.12);
+}
+
+.level ul {
+  margin-top: 10px;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.level p {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* ------------------------------
+   Pricing
+---------------------------------*/
+.pricing-card {
+  width: min(520px, 100%);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 22px;
+  text-align: center;
+}
+
+.price {
+  font-size: 2.2rem;
+  margin-top: 8px;
+}
+
+.price span {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.duration {
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+.pricing-list {
+  margin: 18px 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   FAQ
+---------------------------------*/
+.faq {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+details {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 14px 16px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 650;
+}
+
+details p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+/* ------------------------------
+   Signup Wide Form
+---------------------------------*/
+.signup-box {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.form.wide .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ------------------------------
+   Footer
+---------------------------------*/
+.footer {
+  margin-top: 28px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* ------------------------------
+   Responsive
+---------------------------------*/
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .levels-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .level.pro {
+    grid-column: span 1;
+  }
+
+  .form.wide .row {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+}
